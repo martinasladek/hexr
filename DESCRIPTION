@@ -13,3 +13,5 @@ Imports:
     ggplot2,
     shiny,
     shinyWidgets
+URL: https://github.com/martinasladek/hexr
+BugReports: https://github.com/martinasladek/hexr/issues
