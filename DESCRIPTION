@@ -2,7 +2,7 @@ Package: hexr
 Title: A Colour Picker Shiny Gadget
 Version: 0.0.0.9000
 Authors@R: 
-    person("Sladekova", "Martina", "m.sladekova@sussex.ac.uk", role = c("aut", "cre"),
+    person("Sladekova", "Martina", , "m.sladekova@sussex.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5059-6576"))
 Description: Run a simple colour picker app in the RStudio Viwer pane. 
 License: MIT + file LICENSE
