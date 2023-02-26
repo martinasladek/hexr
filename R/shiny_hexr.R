@@ -18,7 +18,7 @@ shiny_hexr <- function(...){
   ui <- shiny::fluidPage(
 
     # Title
-    title = "Hex Colours",
+    title = "Hex Colour Picker",
 
     # Show a plot of the generated distribution
     shiny::column(4),
@@ -30,22 +30,27 @@ shiny_hexr <- function(...){
                     shiny::fluidRow(align = "center",
                                     shiny::htmlOutput("hex_code")),
                     shiny::fluidRow(align = "center",
+                                    shiny::selectInput(
+                                      "colour_preset",
+                                      label = "",
+                                      choices = rownames(colour_presets()))),
+                    shiny::fluidRow(align = "center",
                                     shinyWidgets::setSliderColor(c("red", "green", "blue"), c(1, 2, 3)),
-                                    shiny::sliderInput("red_slider",
+                                    shiny::sliderInput("red_slider", ticks = FALSE,
                                                        "",
                                                        min = 0,
                                                        max = 1,
-                                                       value = 0.5),
-                                    shiny::sliderInput("green_slider",
+                                                       value = 0),
+                                    shiny::sliderInput("green_slider", ticks = FALSE,
                                                        "",
                                                        min = 0,
                                                        max = 1,
-                                                       value = 0.5),
-                                    shiny::sliderInput("blue_slider",
+                                                       value = 0),
+                                    shiny::sliderInput("blue_slider", ticks = FALSE,
                                                        "",
                                                        min = 0,
                                                        max = 1,
-                                                       value = 0.5)
+                                                       value = 0)
                     )
       )
     ),
@@ -71,13 +76,29 @@ shiny_hexr <- function(...){
 
       shiny::HTML(
         paste0(
-          '<br>',
           '<h1 style="font-size:200%;">',
           rvs$hex_code,
           '</h1>'
         )
       )
     })
+
+    shiny::observe({
+
+      colour_preset_val <- input$colour_preset
+
+      shiny::updateSliderInput(inputId = "red_slider",
+                               value = colour_presets()[colour_preset_val, "r"])
+
+      shiny::updateSliderInput(inputId = "green_slider",
+                               value = colour_presets()[colour_preset_val, "g"])
+
+      shiny::updateSliderInput(inputId = "blue_slider",
+                               value = colour_presets()[colour_preset_val, "b"])
+
+    })
+
+
   }
 
 

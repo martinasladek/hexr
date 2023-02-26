@@ -1,10 +1,10 @@
 Package: hexr
-Title: What the Package Does (One Line, Title Case)
+Title: A Colour Picker Shiny Gadget
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Sladekova", "Martina", "m.sladekova@sussex.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5059-6576"))
+Description: Run a simple colour picker app in the RStudio Viwer pane. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
